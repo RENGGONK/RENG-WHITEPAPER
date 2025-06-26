@@ -231,7 +231,7 @@
     });
   </script>
 
-</body><!-- ✅ Tambahkan ini ke akhir body whitepaper kamu -->
+</body><!-- ✅ Style + Chat Toggle -->
 <style>
   #chat-toggle {
     position: fixed;
@@ -241,7 +241,6 @@
     border: none;
     cursor: pointer;
     z-index: 9999;
-    animation: bounce 2s infinite;
   }
   #chat-toggle img {
     width: 60px;
@@ -251,9 +250,9 @@
     position: fixed;
     bottom: 90px;
     right: 20px;
-    width: 320px;
-    height: 400px;
-    background: #fff;
+    width: 360px;
+    height: 500px;
+    background: white;
     border: 2px solid #84c784;
     border-radius: 15px;
     display: none;
@@ -267,37 +266,24 @@
     height: 100%;
     border: none;
   }
-
-  @keyframes bounce {
-    0%, 100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-5px);
-    }
-  }
 </style>
 
-<!-- 🐸 Tombol Katak Kecil -->
-<button id="chat-toggle">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Frog_emoji.png" alt="Renggonk Bot"/>
+<!-- 🐸 Tombol Katak -->
+<button id="chat-toggle" title="Chat with RENGGONK">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Frog_emoji.png" alt="Renggonk Bot">
 </button>
 
-<!-- 💬 Panel Chat -->
+<!-- 💬 Chat Panel -->
 <div id="chat-box">
-  <iframe id="chat-iframe" src="https://cs-reng.andrafh388.repl.co"></iframe>
+  <iframe id="chat-iframe" src="https://chatgpt.devurl.site/renggonk"></iframe>
 </div>
 
-<!-- 🔊 Suara Ribbit -->
-<audio id="ribbit-sound" src="https://www.myinstants.com/media/sounds/ribbit.mp3"></audio>
-
+<!-- 📜 Script Toggle -->
 <script>
   const chatToggle = document.getElementById('chat-toggle');
   const chatBox = document.getElementById('chat-box');
-  const ribbitSound = document.getElementById('ribbit-sound');
 
   chatToggle.addEventListener('click', () => {
-    ribbitSound.play();
     chatBox.style.display = chatBox.style.display === 'flex' ? 'none' : 'flex';
   });
 </script></html>
