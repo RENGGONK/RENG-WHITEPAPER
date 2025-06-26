@@ -70,6 +70,25 @@
       display: block;
       margin: auto;
     }
+
+    /* Tombol RENGGONK */
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+    #renggongk-button {
+      background-color: #84c784;
+      color: white;
+      font-size: 20px;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 15px;
+      cursor: pointer;
+      box-shadow: 0 0 20px rgba(132, 199, 132, 0.7);
+      animation: pulse 2s infinite;
+      transition: transform 0.2s;
+    }
   </style>
 </head>
 <body>
@@ -78,7 +97,7 @@
     <h1>📜 RENGGONK WHITEPAPER</h1>
     <p>The Most Ridiculous Yet Beloved Meme Token</p>
     <div class="frog-animation">
-      <img src="https://media.giphy.com/media/26FL1soZ3STRDSLGU/giphy.gif" alt="Funny Frog" width="100">
+      <img src="https://media.giphy.com/media/l0MYC0LajbaPoEADu/giphy.gif" alt="Meme Frog" width="120">
     </div>
   </header>
 
@@ -187,10 +206,30 @@
     </div>
   </section>
 
+  <!-- Tombol Aksi -->
+  <section style="text-align: center;">
+    <button id="renggongk-button">
+      🐸 Buy $RENG Now!
+    </button>
+    <audio id="frog-sound" src="https://www.fesliyanstudios.com/play-mp3/6415" preload="auto"></audio>
+  </section>
+
   <footer>
     <p><strong>Website:</strong> <a href="https://renggonk.github.io/">https://renggonk.github.io/</a></p>
     <p><strong>Token Symbol:</strong> $RENG</p>
   </footer>
+
+  <script>
+    const button = document.getElementById("renggongk-button");
+    const sound = document.getElementById("frog-sound");
+
+    button.addEventListener("click", () => {
+      sound.currentTime = 0;
+      sound.play();
+      button.style.transform = "scale(1.2)";
+      setTimeout(() => button.style.transform = "scale(1)", 150);
+    });
+  </script>
 
 </body>
 </html>
